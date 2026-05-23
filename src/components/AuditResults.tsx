@@ -1,5 +1,6 @@
 import React from 'react';
 import { AuditResult, ToolName } from '../lib/audit/types';
+import { AiSummary } from './AiSummary'; // Fixed the missing slash typo here
 import { ArrowDownRight, CheckCircle2, AlertTriangle, TrendingUp, Sparkles } from 'lucide-react';
 
 interface AuditResultsProps {
@@ -126,6 +127,9 @@ export const AuditResults: React.FC<AuditResultsProps> = ({ results, onReset }) 
           })}
         </div>
       </div>
+
+      {/* 4. DYNAMIC AI SUMMARY BOX INTERACTION LAYER */}
+      <AiSummary results={results} useCase="coding" /> 
 
       {/* FOOTER ACTION CONTROL BAR */}
       <div className="flex justify-between items-center pt-2">
